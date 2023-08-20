@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+
+
+
+   
+</head>
+<body>
+    <!-- Header section Design -->
+    <header>
+       <div class="bg-[#F9F6E2] flex items-center   justify-center ">
+
+        <div class="">
+            <p class="text-center font-sans text-black text-3xl font-medium">---SALE FEVER---</p>
+            <h1 class="font-sans text-center text-6xl font-extrabold text-black mt-11">Purchase TK 200 or <br> above & get 
+                <span class="font-extrabold text-6xl text-[#E527B2]">20% off</span></h1>
+            <div class="mt-20 flex items-center justify-center ">
+                <p class="font-medium text-2xl text-center ">Use Promo Code</p>
+                <button class=" ml-4 text-white bg-[#E527B2] hover:bg-pink-600 w-36 h-14 rounded-lg">SELL200</button>
+            </div>
+        </div>
+        <div class="w-[508px] h-[508px]">
+            <img src="images/Summer 1.png" alt="">
+        </div>
+       </div>
+    </header>
+    <main>
+        <section>
+           <h1 class="text-4xl font-sans font-semibold ml-8 mt-20">Kitchenware</h1>
+           <div class="flex mt-6">
+                <!-- first card -->
+                <div  onclick="cardHomeCookerNameShow(this)" class="rounded-xl shadow-2xl  w-80 h-80 bg-base-100 mx-auto content-center text-center">
+                    <img  class="mx-auto w-72 h-52 bg-[#b2b2ad]" src="images/prod1.png" alt="">
+                    <div class="rating mt-2">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                      </div>
+                    <h1  class="text-2xl font-semibold">K. Accessories</h1>
+                    <p class="text-[#b2b2ad] text-2xl font-semibold" >39.00 TK</p>
+                </div>
+                <!-- second card -->
+                <div onclick="cardSportsCatesNameShow(this)" class="rounded-xl shadow-2xl  w-80 h-80 bg-base-100 mx-auto content-center text-center">
+                    <img  class="mx-auto w-72 h-52 bg-[#b2b2ad]" src="images/prod2.png" alt="">
+                    <div class="rating mt-2">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                      </div>
+                    <h1 class="text-2xl font-semibold">K. Accessories</h1>
+                    <p class="text-[#b2b2ad] text-2xl font-semibold" >25.00 TK</p>
+                </div>
+                <!-- Third card -->
+                <div onclick="cardChickenCookerNameShow(this)" class="rounded-xl shadow-2xl  w-80 h-80 bg-base-100 mx-auto content-center text-center">
+                    <img  class="mx-auto w-72 h-52 bg-[#b2b2ad]" src="images/prod3.png" alt="">
+                    <div class="rating mt-2">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                      </div>
+                    <h1 class="text-2xl font-semibold">K. Accessories</h1>
+                    <p class="text-[#b2b2ad] text-2xl font-semibold" >49.00 TK</p>
+                </div>
+
+            <div class="">
+
+                <div class="rounded-xl shadow-2xl  w-80 h-40 bg-base-100 ">
+                    <div class="form-control">
+                          <p class="label-text  font-medium text-2xl font-sans">Have coupon?</p>
+                        <label  class="input-group">
+                          <input  id="CouponAdd" type="text"  placeholder="Coupon code" class=" mt-5 input input-bordered"/>
+                          <button id="Apply"  disabled class=" mt-5  text-2xl text-center font-sans font-medium bg-[#E527B2] text-white">Apply</button>
+                        </label>
+                      </div>
+                 </div>
+
+                 <div class="rounded-xl shadow-2xl mt-16 w-80 h-96 bg-base-100 mx-auto content-center text-center">
+                    <ul class="texr-3xl font-medium font-sans text-left ml-3 space-y-3">
+                        <li id="Home-Cooker">1. Home Cooker</li>
+                        <li id="Sports-catesK">2. Sports cates</li>
+                        <li  id="Chicken-Cooker">3. Home Cooker</li>
+                    </ul>
+
+                    <h1 class="font-medium text-left ml-3 mt-6 ">
+                        Total Price : <span  id="total-price">00</span> </h1>
+                     <p  id="" class="font-medium mt-3 ml-3 text-left"> 
+                        Discount: <span id="total-Discount">00</span></p>
+                    <p  class="font-medium mt-3 ml-3 text-left">
+                        FinalTotal: <span id="total-Division">00</span></p>
+                    <div>
+                    <button onclick="cardChickenCookerPurchaseBtn()" id="purchase-btn" disabled class="btn mt-8  w-3/4 btn-secondary">Make Purchase</button>
+                    </div>
+                 
+                 </div>
+            </div>
+
+             </div>
+            <!-- extra -->
+            <h1 class=" -mt-60 text-4xl mb-8 ml-10 font-sans font-semibold">Sportswear</h1>
+            <div class="flex  mr-80  ">
+                <!-- first card -->
+                <div onclick="cardHomeCookerNameShow(this)"  class=" rounded-xl shadow-2xl  w-80 h-80 bg-base-100 mx-auto content-center text-center">
+                    <img  class="mx-auto w-72 h-52 bg-[#b2b2ad]" src="images/prod4.png" alt="">
+                    <div class="rating mt-2">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                      </div>
+                    <h1 class="text-2xl font-semibold">Sports Back Cap</h1>
+                    <p class="text-[#b2b2ad] text-2xl font-semibold" >49.00 TK</p>
+                </div>
+                <!-- second card -->
+                <div onclick="cardSportsCatesNameShow(this)" class=" rounded-xl shadow-2xl  w-80 h-80 bg-base-100 mx-auto content-center text-center">
+                    <img  class="mx-auto w-72 h-52 bg-[#b2b2ad]" src="images/prod5.png" alt="">
+                    <div class="rating mt-2">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                      </div>
+                    <h1 class="text-2xl font-semibold">Full Jersey Set</h1>
+                    <p class="text-[#b2b2ad] text-2xl font-semibold" >69.00 TK</p>
+                </div>
+                <!-- third card -->
+                <div  onclick=" cardChickenCookerNameShow (this)" class="rounded-xl shadow-2xl  w-80 h-80 bg-base-100 mx-auto content-center text-center">
+                    <img  class="mx-auto w-72 h-52 bg-[#b2b2ad]" src="images/prod6.png" alt="">
+                    <div class="rating mt-2">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                      </div>
+                    <h1 class="text-2xl font-semibold">Sports cates</h1>
+                    <p class="text-[#b2b2ad] text-2xl font-semibold" >159.00 TK</p>
+                </div>
+               
+            </div>
+              
+        </div>
+    
+        </section>
+    </main>
+  
+    <script src="index.js"></script>
+</body>
+</html>
