@@ -33,6 +33,7 @@ function cardChickenCookerNameShow (target){
  const check = (target.childNodes[7].innerText.split(" ")[0]);
  total = parseInt(total) + parseInt(check);
  document.getElementById('total-price').innerText = total;
+ console.log(total);
 
  
 
@@ -53,11 +54,10 @@ document.getElementById("Apply").addEventListener('click', function(totalPrice){
     
     if(couponDiscount === 'SELL200'  ){
         couponDiscount.removeAttribute('disabled')
-        const  totalPrice= document.getElementById('total-Discount');
+        // const  totalPrice= document.getElementById('total-Discount');
 const  discountAmount = ((total * 20) / 100);
-const areaShow = document.getElementById(discountAmount);
-  areaShow.innerText = discountAmount;
-
+  const finalTotal  = total - discountAmount;
+  console.log(total);
     }else{
         couponDiscount.setAttribute();
     }
