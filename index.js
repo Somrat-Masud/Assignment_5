@@ -6,10 +6,10 @@ const li = document.createElement("li");
 li.innerText = show;
  document.getElementById('Home-Cooker').innerText;
  HomeCooker.appendChild(li);
-
  const check = (target.childNodes[7].innerText.split(" ")[0]);
  total = parseInt(total) + parseInt(check);
- document.getElementById('total-price').innerText = total;
+ document.getElementById('total-price').innerText = total.toFixed(2);
+ document.getElementById('purchase-btn').removeAttribute('disabled');
  }
 
 function cardSportsCatesNameShow (target){
@@ -21,8 +21,11 @@ function cardSportsCatesNameShow (target){
      SportsCatesK.appendChild(newli);
  const check = (target.childNodes[7].innerText.split(" ")[0]);
  total = parseInt(total) + parseInt(check);
- document.getElementById('total-price').innerText = total;
+ document.getElementById('total-price').innerText = total.toFixed(2);
+ document.getElementById('purchase-btn').removeAttribute('disabled');
+ 
 }
+
 function cardChickenCookerNameShow (target){
     const ChickenCooker = document.getElementById('Chicken-Cooker');
     const CookerShows = (target.childNodes[5].innerText);
@@ -32,60 +35,31 @@ function cardChickenCookerNameShow (target){
      ChickenCooker.appendChild(newli);
  const check = (target.childNodes[7].innerText.split(" ")[0]);
  total = parseInt(total) + parseInt(check);
- document.getElementById('total-price').innerText = total;
- console.log(total);
-
- 
-
+ document.getElementById('total-price').innerText = total.toFixed(2);
+ document.getElementById('purchase-btn').removeAttribute('disabled');
 }
-
-// discount 
-const  totalPrice= document.getElementById('total-Discount');
-const  discountAmount = ((total * 20) / 100);
-const areaShow = document.getElementById(discountAmount);
-  areaShow.innerText = discountAmount;
-
-
-
-//  apply section 
-
-document.getElementById("Apply").addEventListener('click', function(totalPrice){
-    const couponDiscount = document.getElementById("CouponAdd").value;
-    
-    if(couponDiscount === 'SELL200'  ){
-        couponDiscount.removeAttribute('disabled')
-        // const  totalPrice= document.getElementById('total-Discount');
-const  discountAmount = ((total * 20) / 100);
-  const finalTotal  = total - discountAmount;
-  console.log(total);
-    }else{
-        couponDiscount.setAttribute();
+//  apply section
+const applyButton = document.getElementById("Apply"); 
+document.getElementById('CouponAdd').addEventListener('input', function(event){
+   const totalPrice = event.target.value; 
+    if (total >= 200 && totalPrice =='SELL200'){
+        applyButton.removeAttribute('disabled');
+    }
+    else{
+        applyButton.setAttribute("disabled", 'disabled');
     }
 })
-// make pursase
-// function cardChickenCookerPurchaseBtn(){
-//     const purchaseBtn = document.getElementById("purchase-btn");
-//     if( total >= 0){
-//         purchaseBtn.removeAttribute('disabled')
-//     }else{
-//         purchaseBtn.setAttribute('disabled', true);
-//     }
-// }
-
-
-
-// Purchase Button
-// const purchaseButton = document.getElementById("purchase-btn");
-// purchaseButton.disabled = totalPrice <= 0;
-
-// function redirectModal() {
-//   window.location.href = "#modal";
-// }
-
-// purchaseButton.addEventListener("click", redirectModal);
-
-// if (total == 0 ){
-//     submittable.removeAttribute('disabled')
-// }else{
-//     submittable.setAttribute('disabled', true);
-// }
+applyButton.addEventListener('click', function(){
+    const couponDiscount = document.getElementById("CouponAdd").value;
+    if(total >= 200 && couponDiscount =='SELL200'  ){
+    const  discountAmount = ((total * 20) / 100);
+     const finalTotal  = (total - discountAmount);
+     const  totalPrice = document.getElementById('total-Discount');
+    totalPrice.innerText = discountAmount.toFixed(2);
+  const  finalPrice = document.getElementById('total-Division');
+  finalPrice.innerText = finalTotal.toFixed(2);
+    }
+})
+ document.getElementById('refreshPage').addEventListener('click', function(){
+    window.location.href = 'index.html'
+})
